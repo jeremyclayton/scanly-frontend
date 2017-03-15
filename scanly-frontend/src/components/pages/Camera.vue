@@ -14,7 +14,8 @@ export default {
             console.log('clicked')
             cordova.plugins.barcodeScanner.scan(
                 function (result) {
-                    console.log(result)
+                let barcodeResult = result.text;
+                console.log(barcodeResult);
                   alert("We got a barcode\n" +
                         "Result: " + result.text + "\n" +
                         "Format: " + result.format + "\n" +
@@ -37,6 +38,9 @@ export default {
               }
            )
         }
+    },
+    mounted() {
+        axios.get(`http://localhost:4200/product/${barcodeResult}`).then(response => console.log(response.data));
     }
 }
 </script>
