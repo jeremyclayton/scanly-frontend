@@ -6,5 +6,9 @@ export default [
   {
     path: '/camera/',
     component: require('./components/pages/camera.vue')
+  },
+  {
+    path: '/landing/',
+    component: require('./components/pages/landing.vue')
   }
 ]
