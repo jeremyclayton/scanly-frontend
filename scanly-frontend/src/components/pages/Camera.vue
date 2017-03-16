@@ -4,22 +4,34 @@
     <f7-block inner>
         <p v-on:click="scanBarcode()">Scan</p>
     </f7-block>
+
+            <h1>{{ products.name }}</h1>
+            <h3>Details: {{ products.details }}</h3>
+            <p>Price: {{ products.price }}</p>
+
+
   </f7-page>
 </template>
 
 <script>
 export default {
     methods: {
+        getProducts(barcode){
+            axios.get(`http://10.6.65.224:4200/product/${barcode}`).then(response => {
+                this.products = response.data
+                console.log(response);
+            });
+        },
         scanBarcode(){
             console.log('clicked')
             cordova.plugins.barcodeScanner.scan(
-                function (result) {
-                let barcodeResult = result.text;
-                console.log(barcodeResult);
+                 (result) => {
+                console.log(result.text);
                   alert("We got a barcode\n" +
                         "Result: " + result.text + "\n" +
                         "Format: " + result.format + "\n" +
                         "Cancelled: " + result.cancelled);
+                this.getProducts(result.text);
               },
               function (error) {
                   alert("Scanning failed: " + error);
@@ -39,8 +51,14 @@ export default {
            )
         }
     },
-    mounted() {
-        axios.get(`http://localhost:4200/product/${barcodeResult}`).then(response => console.log(response.data));
-    }
+    data(){
+        return {
+            products: {},
+        };
+
+    },
+    // mounted() {
+    //     axios.get(`http://localhost:4200/product/${barcodeResult}`).then(response => this.products = response.data);
+    // }
 }
 </script>
