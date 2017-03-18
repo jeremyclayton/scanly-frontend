@@ -1,17 +1,17 @@
 <template>
 <f7-pages>
   <f7-page>
-    <!-- <f7-content-block> -->
+    <!-- <f7-content-block>
 
-          <!-- <p> -->
-        <!-- <f7-list-item(media="<img src='https://s-media-cache-ak0.pinimg.com/originals/82/06/07/8206074aa93e20c2b5c7208267b39b55.jpg'>" )></f7-list-item> -->
-          <!-- <f7-data-background="https://s-media-cache-ak0.pinimg.com/originals/82/06/07/8206074aa93e20c2b5c7208267b39b55.jpg"></f7-data-background> -->
-              <!-- <img src="https://s-media-cache-ak0.pinimg.com/originals/82/06/07/8206074aa93e20c2b5c7208267b39b55.jpg" alt="" style="width: 100px; height: auto;"> -->
-          <!-- <img src="../../src/assets/guitar-image.jpg" alt=""> -->
-          <!-- </p> -->
-          <!-- <p>Lorem ipsum dolor sit amet...</p> -->
+          <p>
+        <f7-list-item(media="<img src='https://s-media-cache-ak0.pinimg.com/originals/82/06/07/8206074aa93e20c2b5c7208267b39b55.jpg'>" )></f7-list-item>
+          <f7-data-background="https://s-media-cache-ak0.pinimg.com/originals/82/06/07/8206074aa93e20c2b5c7208267b39b55.jpg"></f7-data-background>
+              <img src="https://s-media-cache-ak0.pinimg.com/originals/82/06/07/8206074aa93e20c2b5c7208267b39b55.jpg" alt="" style="width: 100px; height: auto;">
+          <img src="../../src/assets/guitar-image.jpg" alt="">
+          </p>
+          <p>Lorem ipsum dolor sit amet...</p>
 
-        <!-- </f7-content-block> -->
+        </f7-content-block> -->
 
 
 
@@ -19,17 +19,37 @@
 
     <f7-block-title>Welcome Emage Skateshop</f7-block-title>
     <f7-block class="image">
-      <h3 id="search">Search</h3>
+      <!-- <h3 id="search">Welcome</h3> -->
       <!-- <h3 id="search">Explore</h3> -->
-      <h3 id="camera" v-on:click="scanBarcode()">Camera</h3>
+      <h3 id="img-header">Expeirence Retail</h3>
     </f7-block>
-    <f7-block-title>Navigation</f7-block-title>
-    <f7-card>
+    <f7-block-title>How To Use The App</f7-block-title>
+    <f7-content-block>
+
+          <p>
+            Seitan pok pok echo park, slow-carb meh vape 3 wolf moon humblebrag blue bottle viral scenester portland gastropub polaroid. Gentrify migas neutra sustainable, franzen venmo organic you probably haven't heard of them wolf etsy sriracha.
+
+          </p>
+
+
+        </f7-content-block>
+        <f7-block-title>Side Panels</f7-block-title>
+        <f7-block>
+          <f7-grid>
+            <f7-col width="50">
+              <f7-button open-panel="left">Search</f7-button>
+            </f7-col>
+            <f7-col width="50">
+              <f7-button v-on:click="scanBarcode()">Camera</f7-button>
+            </f7-col>
+          </f7-grid>
+        </f7-block>
+    <!-- <f7-card>
       <f7-card-header>{{ products.name }}</f7-card-header>
       <f7-card-content>{{ products.details }}</f7-card-content>
       <f7-card-footer>{{ products.details }}</f7-card-footer>
-    </f7-card>
-    <f7-list>
+    </f7-card> -->
+    <!-- <f7-list>
       <f7-list-item link="/about/" title="About"></f7-list-item>
       <f7-list-item link="/camera/" title="Camera"></f7-list-item>
       <f7-list-item link="/landing/" title="Landing"></f7-list-item>
@@ -37,8 +57,8 @@
 
 
       <f7-list-item link="/dynamic-route/blog/45/post/125/?foo=bar#about" title="Dynamic Route"></f7-list-item>
-    </f7-list>
-    <f7-block-title>Side Panels</f7-block-title>
+    </f7-list> -->
+    <!-- <f7-block-title>Side Panels</f7-block-title>
     <f7-block>
       <f7-grid>
         <f7-col width="50">
@@ -48,8 +68,8 @@
           <f7-button open-panel="right">Right Panel</f7-button>
         </f7-col>
       </f7-grid>
-    </f7-block>
-    <f7-block-title>Modals</f7-block-title>
+    </f7-block> -->
+    <!-- <f7-block-title>Modals</f7-block-title>
     <f7-block>
       <f7-grid>
         <f7-col width="50">
@@ -59,7 +79,7 @@
           <f7-button open-login-screen="#login-screen">Login Screen</f7-button>
         </f7-col>
       </f7-grid>
-    </f7-block>
+    </f7-block> -->
   </f7-page>
 </f7-pages>
 </f7-view>
@@ -118,23 +138,26 @@ export default {
 </script>
 <style>
 .image {
-  background-image: url(https://www.skipark.com/wp-content/uploads/Klamath-Basin-Sports-300x225.jpg);
-  height: 10vh;
+    background-image: url(http://www.noahsark.co.uk/downloads/1360759462second-floor1.jpg);
+  height: 15vh;
   padding: 20vh;
   display: flex;
+  justify-content: space-between;
 }
 
-#search {
-  font-size: medium;
+/*#search {
+font-size: medium;
   color: white;
   margin-top: 0;
-   color: #610A0D;
-   text-shadow: 0 0 3px #FF0000;
-}
+  color: #610A0D;
+  text-shadow: 0 0 3px #FF0000;
+  margin-left: inherit;
+}*/
 
-#camera {
+#img-header {
   font-size: medium;
-  color: white;
+  color: #eee;
   margin-top: 0;
+  text-shadow: 2px 2px #000000;
 }
 </style>
