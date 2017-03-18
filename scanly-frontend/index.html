@@ -8,6 +8,9 @@
 	 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
 	 <meta name="apple-mobile-web-app-capable" content="yes">
 	 <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; style-src *  'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; media-src *; img-src * filesystem: data:"> -->
+     <meta http-equiv="Content-Security-Policy" content="default-src * gap: ws: https://ssl.gstatic.com;img-src * data: content:;style-src 'self' 'unsafe-inline' data: blob:;script-src * 'unsafe-inline' 'unsafe-eval' data: blob:;">
+     <link rel="stylesheet" href="./src/components/pages/About.vue/font-awesome/css/font-awesome.min.css">
   </head>
   <body>
     <div id="app"></div>

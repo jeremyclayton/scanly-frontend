@@ -11,4 +11,4 @@ export default [
     path: '/landing/',
     component: require('./components/pages/landing.vue')
   }
-]
+];
