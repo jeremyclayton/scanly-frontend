@@ -10,5 +10,8 @@ export default [
   {
     path: '/landing/',
     component: require('./components/pages/landing.vue')
-  }
+},{
+  path: '/product/',
+  component: require('./components/pages/product.vue')
+}
 ];

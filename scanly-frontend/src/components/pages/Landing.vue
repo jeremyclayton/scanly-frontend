@@ -1,10 +1,16 @@
 <template>
   <f7-page>
-      <f7-card>
-    <f7-card-header>Card header content</f7-card-header>
-    <f7-card-content>Card content</f7-card-content>
-    <f7-card-footer>Card footer content</f7-card-footer>
-  </f7-card>
+      <h1>anytthing</h1>
+      <!-- Simple Chip -->
+<f7-chip text="Example Chip"></f7-chip>
+<!-- Colored Chip -->
+<f7-chip text="Another Chip" bg="red" color="white"></f7-chip>
+<!-- Media Chip -->
+<f7-chip text="Jane Doe" media='<img src="http://lorempixel.com/100/100/people/9/">'></f7-chip>
+<!-- Deleteable Chip -->
+<f7-chip text="Another Chip" deleteable @delete="onChipDelete"></f7-chip>
+<!-- Deleteable Media Chip -->
+<f7-chip text="Jane Doe" media='<img src="http://lorempixel.com/100/100/people/9/">' media-bg="red" deleteable @delete="onChipDelete"></f7-chip>
   </f7-page>
 </template>
 
