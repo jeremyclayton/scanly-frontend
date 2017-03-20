@@ -116,7 +116,7 @@ export default {
 
 
 mounted() {
-    axios.get('http://localhost:4200/product/0012300302883').then(response => this.products = response.data[0]);
+    axios.get('http://localhost:4200/product/0012300302883').then(response => this.products = response.data);
 }
 }
 </script>
