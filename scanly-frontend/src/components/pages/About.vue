@@ -37,7 +37,11 @@
         <f7-block>
           <f7-grid>
             <f7-col width="50">
-              <f7-button open-panel="left">Search</f7-button>
+                <f7-list>
+                <f7-list-item link="/search/" title="Landing"></f7-list-item>
+            </f7-list>
+
+              <!-- <f7-button link="/search/">Search</f7-button> -->
             </f7-col>
             <f7-col width="50">
               <f7-button v-on:click="scanBarcode()">Camera</f7-button>
