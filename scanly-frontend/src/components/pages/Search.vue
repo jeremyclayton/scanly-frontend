@@ -3,7 +3,7 @@
 
   <f7-page class="navbar-fixed">
     <!-- <f7-searchbar cancel-link="Cancel" search-list="#search-list" placeholder="Search in items" :clear-button="true" @searchbar:search="onSearch"></f7-searchbar> -->
-  <form data-search-list=".list-block-search" data-search-in=".product in allProducts" class="searchbar searchbar-init">
+  <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
     <div class="searchbar-input">
       <input type="search" placeholder="Search">
       <a href="#" class="searchbar-clear"></a>
@@ -16,7 +16,7 @@
       <div class="content-block-inner">No element found...</div>
     </div>
     <div class="list-block list-block-search searchbar-found">
-      <f7-list-item v-for='product in allProducts' key="product.id" link='/product/' :title='product.name' :subtitle='product.details'></f7-list-item>
+      <f7-list-item v-for='product in allProducts' key="product.id" link='/product/' class="item-title":title='product.name' :subtitle='product.details'></f7-list-item>
     </div>
 </div>
 
