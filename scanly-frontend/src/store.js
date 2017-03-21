@@ -1,6 +1,7 @@
 const store = {
     products: [],
-    selectedProduct : undefined
+    allProducts : [],
+    selectedProduct : undefined,
 };
 
 export default store;

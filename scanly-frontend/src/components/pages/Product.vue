@@ -8,6 +8,12 @@
     <f7-card-content>{{ product.barcode }}</f7-card-content>
     <f7-card-content>{{ product.id }}</f7-card-content>
     <f7-card-content>{{ review.productId }}</f7-card-content>
+    <img v-bind:src="product.picUrl">
+
+
+    <f7-list media-list=''>
+      <f7-list-item   :media='product.image' :title='product.id' :subtitle="product.name" :text='product.name'></f7-list-item>
+    </f7-list>
 
 
     <h3>reviews</h3>
@@ -78,24 +84,24 @@ export default {
 
     }
   },
-  created () {
-        axios.get(`http://localhost:4200/product/${this.product.barcode}/review`).then(response => {
-          this.reviews = response.data
-        });
-   },
-   methods: {
-       addPost: function () {
-           console.log('clicked');
-           axios.post(`http://localhost:4200/review/${this.product.id}`, {
-               productId : this.product.id,
-               memberName : this.memberName,
-               review : this.review
-           }).then(response => {
-               console.log(response.data);
+  created() {
+    axios.get(`http://10.6.65.224:4200/product/${this.product.barcode}/review`).then(response => {
+      this.reviews = response.data
+    });
+  },
+  methods: {
+    addPost: function() {
+      console.log('clicked');
+      axios.post(`http://10.6.65.224:4200/review/${this.product.id}`, {
+        productId: this.product.id,
+        memberName: this.memberName,
+        review: this.review
+      }).then(response => {
+        console.log(response.data);
 
-            });
-       }
-   }
+      });
+    }
+  }
 
 }
 </script>

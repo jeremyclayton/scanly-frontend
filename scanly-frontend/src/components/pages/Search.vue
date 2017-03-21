@@ -15,9 +15,14 @@
     <div class="content-block searchbar-not-found">
       <div class="content-block-inner">No element found...</div>
     </div>
-    <div class="list-block list-block-search searchbar-found">
+    <!-- <div class="list-block list-block-search searchbar-found">
       <f7-list-item v-for='product in allProducts' key="product.id" link='/product/' class="item-title":title='product.name' :subtitle='product.details'></f7-list-item>
-    </div>
+    </div> -->
+    <div class="list-block list-block-search searchbar-found">
+    <f7-list media-list=''>
+           <f7-list-item v-on:click="onClick(product)" v-for='product in allProducts' key="product.id" link='/product/' class="item-title"  :title='product.name' :subtitle='product.details' ></f7-list-item>
+         </f7-list>
+         </div>
 </div>
 
 
@@ -26,21 +31,22 @@
 </template>
 
 <script>
+import store from '../../store.js'
 export default {
   data() {
     return {
-      allProducts: []
+      allProducts: store.allProducts
     }
   },
   created() {
-    axios.get(`http://localhost:4200/product/`).then(response => {
+    axios.get(`http://10.6.65.224:4200/product/`).then(response => {
       console.log(response)
       this.allProducts = response.data
     });
   },
   methods: {
-    onSearch: function() {
-      console.log(query);
+    onClick: function(product) {
+      store.selectedProduct = product;
     }
   }
 }

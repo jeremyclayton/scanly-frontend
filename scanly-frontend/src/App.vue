@@ -8,13 +8,7 @@
     <f7-view id="main-view" navbar-through :dynamic-navbar="true" main>
       <!-- Navbar -->
       <f7-navbar>
-        <f7-nav-left>
-          <f7-link icon="icon-bars" open-panel="left"></f7-link>
-        </f7-nav-left>
         <f7-nav-center sliding>Scanly</f7-nav-center>
-        <f7-nav-right>
-          <f7-link icon="icon-bars" open-panel="right"></f7-link>
-        </f7-nav-right>
       </f7-navbar>
       <!-- Pages -->
       <f7-pages>
@@ -60,6 +54,10 @@ export default {}
 
 .center {
   color: white;
+  font-family: monospace;
+}
+.icon {
+    color: white
 }
 
 
