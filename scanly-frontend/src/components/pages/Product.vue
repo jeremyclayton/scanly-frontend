@@ -42,6 +42,14 @@
           </f7-list-item>
 
           <!-- <f7-label>Textarea</f7-label> -->
+          <!-- <i class="fa fa-star-o" aria-hidden="true"></i> -->
+          <div class="row">
+              <div id="1" class="col-20 star"><i class="fa fa-star-o" aria-hidden="true"></i></div>
+              <div id="2" class="col-20 star"><i class="fa fa-star-o" aria-hidden="true"></i></div>
+              <div id="3" class="col-20 star"><i class="fa fa-star-o" aria-hidden="true"></i></div>
+              <div id="4" class="col-20 star"><i class="fa fa-star-o" aria-hidden="true"></i></div>
+              <div id="5" class="col-20 star"><i class="fa fa-star-o" aria-hidden="true"></i></div>
+            </div>
           <f7-input id="text-from" type="textarea" v-model="review" placeholder="Write A Review"></f7-input>
           </f7-list-item>
         </f7-list>
@@ -85,14 +93,14 @@ export default {
     }
   },
   created() {
-    axios.get(`http://10.6.65.224:4200/product/${this.product.barcode}/review`).then(response => {
+    axios.get(`http://localhost:4200/product/${this.product.barcode}/review`).then(response => {
       this.reviews = response.data
     });
   },
   methods: {
     addPost: function() {
       console.log('clicked');
-      axios.post(`http://10.6.65.224:4200/review/${this.product.id}`, {
+      axios.post(`http://localhost:4200/review/${this.product.id}`, {
         productId: this.product.id,
         memberName: this.memberName,
         review: this.review

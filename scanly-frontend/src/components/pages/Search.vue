@@ -39,7 +39,7 @@ export default {
     }
   },
   created() {
-    axios.get(`http://10.6.65.224:4200/product/`).then(response => {
+    axios.get(`http://localhost:4200/product/`).then(response => {
       console.log(response)
       this.allProducts = response.data
     });
