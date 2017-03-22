@@ -19,5 +19,8 @@ export default [
 },{
   path: '/category/',
   component: require('./components/pages/category.vue')
+},{
+  path: '/productbycategory/',
+  component: require('./components/pages/productbycategory.vue')
 }
 ];

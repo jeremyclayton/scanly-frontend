@@ -2,6 +2,7 @@
 <f7-pages>
 
   <f7-page class="navbar-fixed">
+      <f7-navbar back-link="Back" sliding></f7-navbar>
     <!-- <f7-searchbar cancel-link="Cancel" search-list="#search-list" placeholder="Search in items" :clear-button="true" @searchbar:search="onSearch"></f7-searchbar> -->
   <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
     <div class="searchbar-input">
