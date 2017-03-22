@@ -17,7 +17,7 @@
 export default {
     methods: {
         getProducts(barcode){
-            axios.get(`http://10.6.65.224:4200/product/${barcode}`).then(response => {
+            axios.get(`https://scanly-backend.herokuapp.com/product/${barcode}`).then(response => {
                 this.products = response.data
                 console.log(response);
             });

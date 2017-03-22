@@ -1,23 +1,25 @@
 <template>
 <f7-pages>
   <f7-page>
-    <f7-block class="image">
-      <!-- <div class="icon-wrapper"> -->
-      <div class="icon-container">
-        <i class="fa fa-superpowers fa-lg fa-3x" aria-hidden="true"></i>
-        <p><a href="/category/" class="button hide-border" style="color: #610A0D">Explore</a></p>
-      </div>
-      <div class="icon-container">
-        <i class="middle-icon fa fa-barcode fa-lg fa-5x" aria-hidden="true"></i>
-        <p>Tap to Scan</p>
-      </div>
-      <div class="icon-container">
-        <i class="fa fa-search fa-lg fa-3x" aria-hidden="true"></i>
-        <p><a href="/search/" class="button hide-border" style="color: #610A0D">Search</a></p>
 
-      </div>
-      <!-- </div> -->
-    </f7-block>
+      <f7-block class="image">
+        <!-- <div class="icon-wrapper"> -->
+        <div class="icon-container">
+          <i class="fa fa-superpowers fa-lg fa-3x" aria-hidden="true"></i>
+          <p><a href="/category/" class="button hide-border" style="color: #610A0D">Explore</a></p>
+        </div>
+        <div class="icon-container">
+          <i class="middle-icon fa fa-barcode fa-lg fa-5x" aria-hidden="true"></i>
+          <p>Tap to Scan</p>
+        </div>
+        <div class="icon-container">
+          <i class="fa fa-search fa-lg fa-3x" aria-hidden="true"></i>
+          <p><a href="/search/" class="button hide-border" style="color: #610A0D">Search</a></p>
+
+        </div>
+        <!-- </div> -->
+      </f7-block>
+
     <!-- <f7-block> -->
     <f7-grid id="header-grid">
       <f7-col width="50">
@@ -89,7 +91,7 @@ export default {
   // },
   methods: {
     // getProducts(barcode) {
-    //   axios.get(`http://10.6.65.224:4200/product/${barcode}`).then(response => {
+    //   axios.get(`https://scanly-backend.herokuapp.com/product/${barcode}`).then(response => {
     //     //   this.products = response.data
     //     this.products = response.data
     // }).then(() => {
@@ -124,9 +126,9 @@ export default {
     //       disableSuccessBeep: false // iOS
     //     }
     //   )
-    // },
+    // }
     onClick: function(products) {
-         store.selectedProduct = products;
+      store.selectedProduct = products;
     }
   },
   data() {
@@ -193,7 +195,8 @@ font-size: medium;
   background-size: cover;
   background-position: center;
 }
+
 .hide-border {
-    border: 0px;
+  border: 0px;
 }
 </style>
