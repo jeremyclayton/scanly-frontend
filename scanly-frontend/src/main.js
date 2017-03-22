@@ -1,6 +1,7 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import StarRating from 'vue-star-rating'
 
 // Import F7
 /* eslint-disable no-unused-vars */
@@ -43,6 +44,8 @@ new Vue({
   },
   // Register App Component
   components: {
-    app: App
+    app: App,
+    StarRating: StarRating
+
   }
 })

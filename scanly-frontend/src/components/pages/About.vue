@@ -5,7 +5,7 @@
       <!-- <div class="icon-wrapper"> -->
       <div class="icon-container">
         <i class="fa fa-superpowers fa-lg fa-3x" aria-hidden="true"></i>
-        <p>Explore</p>
+        <p><a href="/category/" class="button hide-border" style="color: #610A0D">Explore</a></p>
       </div>
       <div class="icon-container">
         <i class="middle-icon fa fa-barcode fa-lg fa-5x" aria-hidden="true"></i>
@@ -13,7 +13,7 @@
       </div>
       <div class="icon-container">
         <i class="fa fa-search fa-lg fa-3x" aria-hidden="true"></i>
-        <p><a href="/search/" style="color: #610A0D">Search</a></p>
+        <p><a href="/search/" class="button hide-border" style="color: #610A0D">Search</a></p>
 
       </div>
       <!-- </div> -->
@@ -193,8 +193,7 @@ font-size: medium;
   background-size: cover;
   background-position: center;
 }
-
-.recent-view-cards {
-  /*background-color: #610A0D;*/
+.hide-border {
+    border: 0px;
 }
 </style>

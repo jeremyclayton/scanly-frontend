@@ -12,12 +12,21 @@
 
 
     <f7-list media-list=''>
-      <f7-list-item   :media='product.image' :title='product.id' :subtitle="product.name" :text='product.name'></f7-list-item>
+      <f7-list-item :media='product.image' :title='product.id' :subtitle="product.name" :text='product.name'></f7-list-item>
     </f7-list>
 
 
     <h3>reviews</h3>
-    <f7-card-content v-for="review in reviews" key="review.id">{{ review.review }}</f7-card-content>
+    <f7-card-content v-for="review in reviews" key="review.id">
+      <div class="row">
+        <div id="1" class="col-20 star"><i v-bind:class="{ yellow: review.rating  >= 1 }" class="fa fa-star fa-lg " aria-hidden="true"></i></div>
+        <div id="2" class="col-20 star"><i v-bind:class="{ yellow: review.rating >= 2 }" class="fa fa-star fa-lg " aria-hidden="true"></i></div>
+        <div id="3" class="col-20 star"><i v-bind:class="{ yellow: review.rating >= 3 }" class="fa fa-star fa-lg " aria-hidden="true"></i></div>
+        <div id="4" class="col-20 star"><i v-bind:class="{ yellow: review.rating >= 4 }" class="fa fa-star fa-lg " aria-hidden="true"></i></div>
+        <div id="5" class="col-20 star"><i v-bind:class="{ yellow: review.rating >= 5 }" class="fa fa-star fa-lg " aria-hidden="true"></i></div>
+      </div>
+      {{ review.review }}
+    </f7-card-content>
 
   </f7-card>
   <f7-block>
@@ -40,23 +49,24 @@
             <!-- <f7-label>Name</f7-label> -->
             <f7-input id="name-form" type="text" v-model="memberName" placeholder="Name"></f7-input>
           </f7-list-item>
+          <!-- <star-rating v-bind:increment="0.5" v-bind:max-rating="5" inactive-color="#000" active-color="#cc1166" v-bind:star-size="90">
+          </star-rating> -->
 
+          <!-- <star-rating :rating="rating" @rating-selected="syncRating"></star-rating>
+  <a href="#">Reset Rating</a>
+</div> -->
           <!-- <f7-label>Textarea</f7-label> -->
           <!-- <i class="fa fa-star-o" aria-hidden="true"></i> -->
           <div class="row">
-              <div id="1" class="col-20 star"><i class="fa fa-star-o" aria-hidden="true"></i></div>
-              <div id="2" class="col-20 star"><i class="fa fa-star-o" aria-hidden="true"></i></div>
-              <div id="3" class="col-20 star"><i class="fa fa-star-o" aria-hidden="true"></i></div>
-              <div id="4" class="col-20 star"><i class="fa fa-star-o" aria-hidden="true"></i></div>
-              <div id="5" class="col-20 star"><i class="fa fa-star-o" aria-hidden="true"></i></div>
-            </div>
+            <div v-on:click="syncRating(1)" id="1" class="col-20 star"><i v-bind:class="{ yellow: rating >= 1 }" class="fa fa-star fa-lg fa-4x" aria-hidden="true"></i></div>
+            <div v-on:click="syncRating(2)" id="2" class="col-20 star"><i v-bind:class="{ yellow: rating >= 2 }" class="fa fa-star fa-lg fa-4x" aria-hidden="true"></i></div>
+            <div v-on:click="syncRating(3)" id="3" class="col-20 star"><i v-bind:class="{ yellow: rating >= 3 }" class="fa fa-star fa-lg fa-4x" aria-hidden="true"></i></div>
+            <div v-on:click="syncRating(4)" id="4" class="col-20 star"><i v-bind:class="{ yellow: rating >= 4 }" class="fa fa-star fa-lg fa-4x" aria-hidden="true"></i></div>
+            <div v-on:click="syncRating(5)" id="5" class="col-20 star"><i v-bind:class="{ yellow: rating >= 5 }" class="fa fa-star fa-lg fa-4x" aria-hidden="true"></i></div>
+          </div>
           <f7-input id="text-from" type="textarea" v-model="review" placeholder="Write A Review"></f7-input>
           </f7-list-item>
         </f7-list>
-
-
-
-
 
         <p>
           <f7-grid>
@@ -80,16 +90,18 @@
 
 <script>
 import store from '../../store.js'
+import StarRating from 'vue-star-rating'
 
 export default {
-
+  // name: 'star-rating',
   data() {
     return {
+      activeColor: 'blue',
       product: store.selectedProduct,
       reviews: [],
       memberName: '',
       review: '',
-
+      rating: 0
     }
   },
   created() {
@@ -103,12 +115,18 @@ export default {
       axios.post(`http://localhost:4200/review/${this.product.id}`, {
         productId: this.product.id,
         memberName: this.memberName,
-        review: this.review
+        review: this.review,
+        rating: this.rating,
       }).then(response => {
         console.log(response.data);
 
       });
+    },
+    syncRating(rating) {
+      console.log(rating);
+      this.rating = rating;
     }
+
   }
 
 }
@@ -120,5 +138,9 @@ export default {
 
 #text-from {
   height: 70vh;
+}
+
+.yellow {
+  color: yellow
 }
 </style>

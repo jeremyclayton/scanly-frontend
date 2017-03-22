@@ -16,5 +16,8 @@ export default [
 },{
   path: '/search/',
   component: require('./components/pages/search.vue')
+},{
+  path: '/category/',
+  component: require('./components/pages/category.vue')
 }
 ];
