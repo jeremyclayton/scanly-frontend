@@ -1,7 +1,6 @@
 <template>
 <f7-pages>
   <f7-page>
-
       <f7-block class="image">
         <!-- <div class="icon-wrapper"> -->
         <div class="icon-container">

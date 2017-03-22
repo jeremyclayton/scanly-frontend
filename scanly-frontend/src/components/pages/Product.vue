@@ -1,5 +1,6 @@
 <template>
 <f7-page>
+    <f7-navbar back-link="Back" sliding></f7-navbar>
 
   <f7-card class="product-container">
 
@@ -55,7 +56,6 @@
 
     <f7-pages>
       <f7-page>
-        <f7-navbar back-link="Back" sliding></f7-navbar>
         <f7-list>
           <f7-list-item>
 
@@ -151,6 +151,7 @@ export default {
 
 #text-from {
   height: 70vh;
+  padding-top: 3em;
 }
 
 .yellow {
