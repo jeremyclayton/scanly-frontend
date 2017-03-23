@@ -116,7 +116,7 @@ export default {
   methods: {
     addPost: function() {
       console.log('clicked');
-      axios.post(`http://localhost:4200/review/${this.product.id}`, {
+      axios.post(`http://10.6.65.224:4200/review/${this.product.id}`, {
         productId: this.product.id,
         memberName: this.memberName,
         review: this.review,
@@ -124,7 +124,7 @@ export default {
       }).then(response => {
         console.log(response.data);
       }).then(() => {
-        axios.get(`http://localhost:4200/product/${this.product.barcode}/review`).then(response => {
+        axios.get(`http://10.6.65.224:4200/product/${this.product.barcode}/review`).then(response => {
           this.reviews = response.data
         });
       });

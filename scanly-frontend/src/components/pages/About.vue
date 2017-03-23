@@ -9,7 +9,7 @@
         </div>
         <div class="icon-container">
           <i class="middle-icon fa fa-barcode fa-lg fa-5x" aria-hidden="true"></i>
-          <p>Tap to Scan</p>
+          <p v-on:click="scanBarcode()">Tap to Scan</p>
         </div>
         <div class="icon-container">
           <i class="fa fa-search fa-lg fa-3x" aria-hidden="true"></i>
@@ -52,7 +52,7 @@
         </div>
       </f7-col>
     </f7-grid>
-    <f7-block>
+    <!-- <f7-block>
       <f7-grid>
         <f7-col width="50">
           <p><a href="/search/" class="button">Search</a></p>
@@ -63,7 +63,7 @@
 
         </f7-col>
       </f7-grid>
-    </f7-block>
+    </f7-block> -->
 
     <f7-list media-list=''>
       <f7-list-item v-on:click="onClick(products)" link='/product/' :title='products.name' :subtitle='products.details'></f7-list-item>
@@ -89,16 +89,16 @@ export default {
   //   }
   // },
   methods: {
-    // getProducts(barcode) {
-    //   axios.get(`https://scanly-backend.herokuapp.com/product/${barcode}`).then(response => {
-    //     //   this.products = response.data
-    //     this.products = response.data
-    // }).then(() => {
-    //     console.log('hit');
-    //     store.selectedProduct = this.products;
-    //     this.$router.load({url: '/product/'})
-    //   });
-    // },
+    getProducts(barcode) {
+      axios.get(`http://localhost:4200/product/${barcode}`).then(response => {
+        //   this.products = response.data
+        this.products = response.data
+    }).then(() => {
+        console.log('hit');
+        store.selectedProduct = this.products;
+        this.$router.load({url: '/product/'})
+      });
+    },
     // scanBarcode() {
     //   console.log('clicked')
     //   cordova.plugins.barcodeScanner.scan(
