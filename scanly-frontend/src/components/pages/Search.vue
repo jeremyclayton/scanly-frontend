@@ -40,7 +40,7 @@ export default {
     }
   },
   created() {
-    axios.get(`http://localhost:4200/product/`).then(response => {
+    axios.get(`https://scanly-backend.herokuapp.com/product/`).then(response => {
       console.log(response)
       this.allProducts = response.data
     });
@@ -52,3 +52,8 @@ export default {
   }
 }
 </script>
+<style media="screen">
+    .list-block {
+        margin-top: -3em;
+    }
+</style>

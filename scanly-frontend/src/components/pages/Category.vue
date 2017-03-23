@@ -12,7 +12,7 @@
                 <f7-list-item v-on:click="onClick(category)" v-for='category in category' key="category.id" link='/productbycategory/' class="item-title"  :title='category.name'></f7-list-item>
                 <img src="category.categoryImg" alt="">
             </f7-list> -->
-    <div class="row no-gutter">
+    <div class="row no-gutter category-list">
         <!-- <div class="col-50"> -->
             <div class="openCard"  v-for='category in category' key="category.id" >
                 <div class="opacity-background">
@@ -33,7 +33,7 @@
 import store from '../../store.js'
 export default {
   created() {
-    axios.get('http://localhost:4200/category').then(response => {
+    axios.get('https://scanly-backend.herokuapp.com/category').then(response => {
       this.category = response.data
       console.log(this.category);
     })
@@ -67,11 +67,11 @@ export default {
   color: #610A0D;;
 }
 .catImg {
-    width: 187px;
+    width: 150px;
     height: 150px;
 
 }
-.no-gutter {
+.category-list{
     display: flex;
     justify-content: center;
     margin-top: .2em

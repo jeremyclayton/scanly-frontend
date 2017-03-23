@@ -57,8 +57,7 @@
     <f7-pages>
       <f7-page>
         <f7-list>
-          <f7-list-item>
-
+          <f7-list-item class="memberName">
             <f7-input id="name-form" type="text" v-model="memberName" placeholder="Enter Your Name"></f7-input>
           </f7-list-item>
 
@@ -109,14 +108,14 @@ export default {
     }
   },
   created() {
-    axios.get(`http://localhost:4200/product/${this.product.barcode}/review`).then(response => {
+    axios.get(`https://scanly-backend.herokuapp.com/product/${this.product.barcode}/review`).then(response => {
       this.reviews = response.data
     });
   },
   methods: {
     addPost: function() {
       console.log('clicked');
-      axios.post(`http://10.6.65.224:4200/review/${this.product.id}`, {
+      axios.post(`https://scanly-backend.herokuapp.com/review/${this.product.id}`, {
         productId: this.product.id,
         memberName: this.memberName,
         review: this.review,
@@ -124,7 +123,7 @@ export default {
       }).then(response => {
         console.log(response.data);
       }).then(() => {
-        axios.get(`http://10.6.65.224:4200/product/${this.product.barcode}/review`).then(response => {
+        axios.get(`https://scanly-backend.herokuapp.com/product/${this.product.barcode}/review`).then(response => {
           this.reviews = response.data
         });
       });
@@ -150,7 +149,7 @@ export default {
 }
 
 #text-from {
-  height: 70vh;
+  height: 60vh;
   padding-top: 3em;
 }
 
@@ -191,5 +190,8 @@ export default {
     align-items: center;
     padding-left: 1em;
     padding-right: 1em;
+}
+.memberName{
+    margin-top: 5em;
 }
 </style>

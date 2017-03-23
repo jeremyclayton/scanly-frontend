@@ -13,7 +13,7 @@
 import store from '../../store.js'
 export default {
     created(){
-        axios.get(`http://localhost:4200/category/${this.category.id}/product`).then(result => {
+        axios.get(`https://scanly-backend.herokuapp.com/category/${this.category.id}/product`).then(result => {
             this.products = result.data
         })
     },
