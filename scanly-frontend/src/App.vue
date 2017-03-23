@@ -54,7 +54,7 @@ export default {}
 
 .center {
   color: white;
-  font-family: monospace;
+  font-family: 'Comfortaa', cursive;
 }
 .icon {
     color: white

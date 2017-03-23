@@ -1,11 +1,11 @@
 <template>
 <f7-pages>
   <f7-page>
-      <f7-block class="image">
-        <!-- <div class="icon-wrapper"> -->
+    <f7-block class="image">
+      <div class="icon-wrapper">
         <div class="icon-container">
           <i class="fa fa-superpowers fa-lg fa-3x" aria-hidden="true"></i>
-          <p><a href="/category/" class="button hide-border" style="color: #610A0D">Explore</a></p>
+          <p><a href="/category/" class="button hide-border" style="color: white">Explore</a></p>
         </div>
         <div class="icon-container">
           <i class="middle-icon fa fa-barcode fa-lg fa-5x" aria-hidden="true"></i>
@@ -13,11 +13,11 @@
         </div>
         <div class="icon-container">
           <i class="fa fa-search fa-lg fa-3x" aria-hidden="true"></i>
-          <p><a href="/search/" class="button hide-border" style="color: #610A0D">Search</a></p>
+          <p><a href="/search/" class="button hide-border" style="color: white">Search</a></p>
 
         </div>
-        <!-- </div> -->
-      </f7-block>
+      </div>
+    </f7-block>
 
     <!-- <f7-block> -->
     <f7-grid id="header-grid">
@@ -93,10 +93,12 @@ export default {
       axios.get(`http://localhost:4200/product/${barcode}`).then(response => {
         //   this.products = response.data
         this.products = response.data
-    }).then(() => {
+      }).then(() => {
         console.log('hit');
         store.selectedProduct = this.products;
-        this.$router.load({url: '/product/'})
+        this.$router.load({
+          url: '/product/'
+        })
       });
     },
     // scanBarcode() {
@@ -159,8 +161,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #610A0D;
+  color: white;
   margin-top: -2em;
+  /*background-color: rgba(0, 0, 0, 0.7);*/
 }
 
 
@@ -197,5 +200,12 @@ font-size: medium;
 
 .hide-border {
   border: 0px;
+}
+
+.icon-wrapper {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10em 3.1em;
+  margin-top: -10em;
 }
 </style>
