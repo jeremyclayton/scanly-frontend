@@ -1,6 +1,11 @@
-# y
+# Scanly
+## Client
 
-> y
+This project video is live at (https://www.scanly.firebaseapp.com).
+
+Scanly is the optimum product guide for outdoor gear reviewed and compared by you. Discover all outdoor gear specifications and reviews. For this project I paired with emage skate shop in Denver, CO.
+
+You can start by scanning one or more products in the retail store, searching for any product, or just browse all of the avaliable products by category. By simply scanning a barcode you will retrieve all the revelvant information on that particalar item. You can also leave reviews in a easy to use rating system that will upvote or downvote the gear.
 
 ## Build Setup
 
@@ -18,4 +23,4 @@ npm run build
 npm run build --report
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
