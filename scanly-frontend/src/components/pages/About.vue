@@ -163,18 +163,8 @@ export default {
   align-items: center;
   color: white;
   margin-top: -2em;
-  /*background-color: rgba(0, 0, 0, 0.7);*/
 }
 
-
-/*#search {
-font-size: medium;
-  color: white;
-  margin-top: 0;
-  color: #610A0D;
-  text-shadow: 0 0 3px #FF0000;
-  margin-left: inherit;
-}*/
 
 #img-header {
   font-size: medium;

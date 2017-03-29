@@ -1,29 +1,17 @@
 <template>
 <f7-page>
   <f7-navbar back-link="Back" sliding></f7-navbar>
-  <!-- <f7-list media-list=''>
-             <f7-list-item v-on:click="onClick(category)" v-for='category in category' key="category.id" link='/productbycategory/' class="item-title"  :title='category.name'></f7-list-item>
-           </f7-list> -->
-  <!-- <div v-on:click="onClick(category)" v-for='category in category' key="category.id" link='/productbycategory/'>
-               <img v-bind:src="category.categoryImg" alt="">
-               <p>{{category.name}}</p>
-           </div> -->
-  <!-- <f7-list media-list=''>
-                <f7-list-item v-on:click="onClick(category)" v-for='category in category' key="category.id" link='/productbycategory/' class="item-title"  :title='category.name'></f7-list-item>
-                <img src="category.categoryImg" alt="">
-            </f7-list> -->
-    <div class="row no-gutter category-list">
-        <!-- <div class="col-50"> -->
-            <div class="openCard"  v-for='category in category' key="category.id" >
-                <div class="opacity-background">
-              <img class="catImg" v-bind:src="category.categoryImg"/>
-               </div>
-                  <div class="card-title" v-on:click="onClick(category)"><p><a href="/productbycategory/">{{category.name}}</a></p></div>
-              <!-- <div class="card-subtitle">Breckenridge, CO</div> -->
-            <!-- </div> -->
-        </div>
 
+  <div class="row no-gutter category-list">
+    <div class="openCard" v-for='category in category' key="category.id">
+      <div class="opacity-background">
+        <img class="catImg" v-bind:src="category.categoryImg" />
+      </div>
+      <div class="card-title" v-on:click="onClick(category)">
+        <p><a href="/productbycategory/">{{category.name}}</a></p>
+      </div>
     </div>
+  </div>
 
 
 </f7-page>
@@ -64,19 +52,22 @@ export default {
   font-weight: bold;
   font-family: 'Comfortaa', cursive;
   color: #fff;
-  color: #610A0D;;
+  color: #610A0D;
+  ;
 }
-.catImg {
-    width: 150px;
-    height: 150px;
 
+.catImg {
+  width: 150px;
+  height: 150px;
 }
-.category-list{
-    display: flex;
-    justify-content: center;
-    margin-top: .2em
+
+.category-list {
+  display: flex;
+  justify-content: center;
+  margin-top: .2em
 }
-.opacity-background{
-    opacity: .3;
+
+.opacity-background {
+  opacity: .3;
 }
 </style>
